@@ -1,5 +1,6 @@
-import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/style.scss';
+
 import Axios from 'axios';
 
 import queryString from 'query-string';

@@ -1,0 +1,20 @@
+
+.jumbotron-intro {
+    color: #fff;
+    background: url("/public/img/logo.png") no-repeat 0 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+ 
+
+img.responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
