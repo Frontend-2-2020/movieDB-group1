@@ -24,13 +24,16 @@ export function initOverview() {
                                 <p id="reldate${i}" class="card-text">Release date: ${resultaat[i].release_date} </p>
                             </div>
                 
-                            `
+                            `;
                 document
                     .querySelector('#overview')
-                    .innerHTML+= film
+                    .innerHTML+= film;
   
             };
-            film.addEventListener('click',function(){document.location.href= `${document.location.href}?movie=${resultaat[i].id} `})
+
+            film.addEventListener('click', function(){
+              document.location.href= `${document.location.href}?movie=${resultaat[i].id}`;
+            });
         })
         .catch(function (error) {
             // handle error
