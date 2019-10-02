@@ -53,6 +53,5 @@ export function initOverview() {
         . finally(function () {
             // always executed
         });
-
 }
 
