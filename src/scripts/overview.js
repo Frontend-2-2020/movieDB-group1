@@ -28,16 +28,20 @@ export function initOverview() {
                     .innerHTML+= film;
             };
 
+            // Get recently created filmcards
             var films = document.querySelectorAll('.card');
+
+            // Add eventslistener to each card
             for(var j = 0; j < films.length; j++){
               console.log(films[j]);
               films[j].addEventListener("click", function(e){
                 e.preventDefault();
                 console.log(this.getAttribute("data-id"));
-                document.location.href = `${document.location.href}?movie=${this.getAttribute("data-id")}`;
+                window.location.href += `?movie=${this.getAttribute("data-id")}`;
               });
             };
 
+            //TO BE DELETED
             // film.addEventListener('click', function(){
             //   document.location.href= `${document.location.href}?movie=${resultaat[i].id}`;
             // });
