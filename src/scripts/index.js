@@ -12,11 +12,11 @@ console.log(parsed);
 // Get URL to decide wich script to execute
 if(parsed.movie){
   initDetail();
-  hideShow('intropage');
+  //hideShow('intropage');
   console.log('details');
 }else{
   initOverview();
-  hideShow('detailpage');
+  //hideShow('detailpage');
   console.log('home');
 }
 
