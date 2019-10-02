@@ -1,7 +1,6 @@
 import Axios from 'axios';
 
 export function initOverview() {
-
     Axios
         .get(
             'https://api.themoviedb.org/3/movie/popular?api_key=d8dfe38fbb3fbe5e4586e9dd35f' +
@@ -11,10 +10,9 @@ export function initOverview() {
             var resultaat = response.data.results;
             console.log(response);
             for (var i = 0; i < 10; i++) {
-
                 console.log(resultaat[i]); //standaard key in axios is data
                 var film =   `
-                <div class="card h-100" id="film${i}">
+                <div class="card h-100" id="film${i}" data-id="${resultaat[i].id}">
                                 <a href=""><img
                                     id="poster${i}"
                                     class="card-img-top w3-hover-opacity"
@@ -28,12 +26,21 @@ export function initOverview() {
                 document
                     .querySelector('#overview')
                     .innerHTML+= film;
-  
             };
 
-            film.addEventListener('click', function(){
-              document.location.href= `${document.location.href}?movie=${resultaat[i].id}`;
-            });
+            var films = document.querySelectorAll('.card');
+            for(var j = 0; j < films.length; j++){
+              console.log(films[j]);
+              films[j].addEventListener("click", function(e){
+                e.preventDefault();
+                console.log(this.getAttribute("data-id"));
+                document.location.href = `${document.location.href}?movie=${this.getAttribute("data-id")}`;
+              });
+            };
+
+            // film.addEventListener('click', function(){
+            //   document.location.href= `${document.location.href}?movie=${resultaat[i].id}`;
+            // });
         })
         .catch(function (error) {
             // handle error
