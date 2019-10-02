@@ -11,8 +11,10 @@ const parsed = queryString.parse(location.search);
 console.log(parsed);
 
 // Get URL to decide wich script to execute
-if(!parsed){
-  initOverview();
-}else{
+if(parsed.movie != null){
   initDetail();
+  console.log('details');
+}else{
+  initOverview();
+  console.log('home');
 }
