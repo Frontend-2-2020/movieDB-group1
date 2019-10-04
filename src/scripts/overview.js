@@ -12,14 +12,15 @@ export function initOverview() {
             for (var i = 0; i < 10; i++) {
                 console.log(resultaat[i]); //standaard key in axios is data
                 var film =   `
-                <div class="card h-100" id="film${i}" data-id="${resultaat[i].id}">
+                <div class="card h-100 " id="film${i}" data-id="${resultaat[i].id}">
                                 <a href=""><img
                                     id="poster${i}"
                                     class="card-img-top w3-hover-opacity"
                                     src="https://image.tmdb.org/t/p/w500/${resultaat[i].poster_path}"></a>
                                 <div class="d-title"><h1 id="titel${i}" class="card-title">${resultaat[i].title}</h1></div>
-                                <h2 id="score${i}" class="card-score">${resultaat[i].vote_average}</h2>
-                                <p id="reldate${i}" class="card-text">Release date: ${resultaat[i].release_date} </p>
+                                <div class="d-ranking"><p class="ranking">${[i+1]}</p></div>
+                                <h2 id="score${i}" class="card-score"> <strong>Score:</strong> ${resultaat[i].vote_average}</h2>
+                                <p id="reldate${i}" class="card-text"><strong>Release date:</strong> ${resultaat[i].release_date} </p>
                             </div>
                 
                             `;

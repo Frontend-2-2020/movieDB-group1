@@ -3,6 +3,7 @@
 .card {
     position: relative;
     display: flex;
+   
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
@@ -37,6 +38,10 @@
     
     line-height: 1.5rem;
   }
+
+ 
+ 
+
   .card-score{
     font-size: 1rem;
     
@@ -55,8 +60,39 @@
     // background-color: yellow;
 }
 
+
+.d-ranking{
+  margin-top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color:		rgba(128, 128, 128, .35);
+  text-align: center;
+}
+.ranking{
+ 
+  color: white;
+  font-family: 'arial black', sans-serif;
+  font-size: 2rem;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
 }
+
+h2{
+  margin-top: 10px;
+  line-height: 10px;
+  color: rgba(0, 50, 75, .35);
+  margin-left: 5px;
+  
+  
+
+}
+p
+  {
+    color: rgba(0, 50, 75, .5) ;
+    margin-left: 5px;
+  }
+  
