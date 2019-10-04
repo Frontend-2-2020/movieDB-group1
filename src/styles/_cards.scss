@@ -23,14 +23,19 @@
       filter: alpha(opacity=0.70); /* For IE8 and earlier */
     }
 
+    .d-title{
+      background-color: 	rgba(0, 50, 75, 0.65);
+      color: white;
+      position: absolute;
+      width: 100%;
+    }
     .card-title {
       margin-bottom: 0.15rem;
-      font-size: 1.5rem;
-      background-color: #00324B;
-    color: white;
-    text-indent:  6px;
+      font-size: 1rem;
+      margin: 10px;
+   
     
-    line-height: 2.8rem;
+    line-height: 1.5rem;
   }
   .card-score{
     font-size: 1rem;

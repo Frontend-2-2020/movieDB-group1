@@ -17,7 +17,7 @@ export function initOverview() {
                                     id="poster${i}"
                                     class="card-img-top w3-hover-opacity"
                                     src="https://image.tmdb.org/t/p/w500/${resultaat[i].poster_path}"></a>
-                                <h1 id="titel${i}" class="card-title">${resultaat[i].title}</h1>
+                                <div class="d-title"><h1 id="titel${i}" class="card-title">${resultaat[i].title}</h1></div>
                                 <h2 id="score${i}" class="card-score">${resultaat[i].vote_average}</h2>
                                 <p id="reldate${i}" class="card-text">Release date: ${resultaat[i].release_date} </p>
                             </div>
