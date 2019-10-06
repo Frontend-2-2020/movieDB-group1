@@ -10,6 +10,7 @@ const parsed = queryString.parse(location.search);
 console.log(parsed);
 
 // Get URL to decide wich script to execute
+          //TODO uncomment hideShow() when all is ready!!!!
 if(parsed.movie){
   initDetail();
   //hideShow('intropage');
