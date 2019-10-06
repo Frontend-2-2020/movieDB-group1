@@ -44,7 +44,6 @@ function fillHero(data, movies){
   // const movieTrailer = document.querySelector('#trailer');
   // const urlTrailer = `https://www.youtube.com/embed/${data.}LFoz8ZJWmPs`;
 
-
   heroImg.style.backgroundImage = urlImg;
   tagLine.textContent = data.tagline;
   movieTitle.textContent = data.title;
