@@ -9,6 +9,19 @@
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
+
+  
+.arrow-down{
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    min-width: 100%;
+    // background-color: red;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    left: 48%;
+} 
+
 }
  
 
@@ -17,4 +30,3 @@ img.responsive {
     max-width: 100%;
     height: auto;
 }
-
