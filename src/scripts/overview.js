@@ -12,7 +12,7 @@ export function initOverview() {
             for (var i = 0; i < 10; i++) {
                 console.log(resultaat[i]); //standaard key in axios is data
                 var film =   `
-                <div class="card h-100 " id="film${i}" data-id="${resultaat[i].id}">
+                <div class="card h-100 " id="film${i}" data-id="${resultaat[i].id}" data-rank="${[i+1]}">
                                 <a href=""><img
                                     id="poster${i}"
                                     class="card-img-top w3-hover-opacity"
@@ -38,7 +38,9 @@ export function initOverview() {
               films[j].addEventListener("click", function(e){
                 e.preventDefault();
                 console.log(this.getAttribute("data-id"));
-                window.location.href += `?movie=${this.getAttribute("data-id")}`;
+
+                //Adds 'movieID' and 'ranking number' in URL to catch in detailpage
+                window.location.href += `?movie=${this.getAttribute("data-id")}&rank=${this.getAttribute("data-rank")}`;
               });
             };
 

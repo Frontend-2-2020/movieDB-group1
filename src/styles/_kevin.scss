@@ -2,6 +2,10 @@
 @import "_colors";
 @import "_circles";
 
+li{
+  list-style: none;
+}
+
 .detailpage {
   background-color: $swatch_2;
   color: #923026;
@@ -39,6 +43,23 @@ nav{
     top: 0;
     left: 0;
     opacity: .5;
+  }
+
+  *{
+    color: inherit;
+  }
+
+}
+
+.ranking-box{
+  position: absolute;
+  top: 0;
+
+  .ranking__text{
+    padding: 2rem;
+    font-size: 3rem;
+    background: rgba(0,0,0,.6);
+    font-weight: 800;
   }
 }
 

@@ -22,6 +22,7 @@
         </div>
     <!-- END intropage -->
 
+    <!-- BEGIN detailpage -->
     <div id="detailpage">
         <nav>
             <!-- LOGO TMDB -->
@@ -30,7 +31,9 @@
                 alt="">
         </nav>
         <div class="jumbotron jumbotron--bg">
-            <div class="container">
+          <aside class="ranking-box"><p class="ranking__text"><sup>#</sup> <span class="ranking__num">1
+          </span></p></aside>
+          <div class="container">
                 <!-- start Bootstrap "grid"-->
                 <div class="row row--hero">
                     <div class="col col-lg-7 align-self-end">
@@ -47,7 +50,7 @@
                         <div class="embed-responsive embed-responsive-4by3">
                             <iframe
                                 class="embed-responsive-item jumbotron__trailer"
-                                src="https://www.youtube.com/embed/LFoz8ZJWmPs"
+                                src="#"
                                 id="trailer"></iframe>
                         </div>
                     </div>
@@ -58,7 +61,7 @@
             <!-- END container for "grid"-->
         </div>
         <!-- END jumbotron -->
-        <div class="container">
+        <div class="container text-center">
             <!-- start Bootstrap "grid"-->
             <div class="row">
                 <div class="col col-lg-4 movie-details">
@@ -78,15 +81,18 @@
                             </ul>
                         </div>
                         <h4>Production companies</h4>
+                        <ul class="production-comp d-flex flex-row flex-wrap align-items-center"></ul>
                         <!-- Hier komen de namen + logo's adhv API -->
                         <h4>Ratings</h4>
                         <!-- Hier komen de rating adhv API -->
-                        <div class="c100 p50 green">
-                            <span>70%</span>
-                            <div class="slice">
-                                <div class="bar"></div>
-                                <div class="fill"></div>
-                            </div>
+                        <div class="wrapper d-flex">
+                          <div class="score c100 green m-auto">
+                              <span class="score-txt">#</span>
+                              <div class="slice">
+                                  <div class="bar"></div>
+                                  <div class="fill"></div>
+                              </div>
+                          </div>
                         </div>
                     </div>
                 </div>

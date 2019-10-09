@@ -1001,6 +1001,10 @@
   color: #e08833;
 }
 
+li {
+  list-style: none;
+}
+
 .detailpage {
   background-color: #fff2df;
   color: #923026;
@@ -1035,6 +1039,22 @@ nav img {
   top: 0;
   left: 0;
   opacity: .5;
+}
+
+.jumbotron * {
+  color: inherit;
+}
+
+.ranking-box {
+  position: absolute;
+  top: 0;
+}
+
+.ranking-box .ranking__text {
+  padding: 2rem;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.6);
+  font-weight: 800;
 }
 
 .row--hero {
