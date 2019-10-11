@@ -168,35 +168,5 @@ const fillData = (dataObj) =>{
   mediaItem.appendChild(mediaImg);
  };
 
-
-// BACKUP (vragen les)
-// // GET movieDetails
-  // Axios.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=03eb07b472e59db4fab1d72f159a2841`)
-  // .then(function (response) {
-  //   // handle success
-  //   // Declare data variable - one object about a specific movie - catched with ID from URL (queryString)
-  //   const movieDetailsData = response.data;
-
-  //   // GET movie videos, based on ID
-  //   Axios.get(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=03eb07b472e59db4fab1d72f159a2841`)
-  //   .then(function(response){
-  //     const movieVideos = response.data.results;
-  //     fillHero(movieDetailsData, movieVideos);
-  //     console.log(movieVideos);
-  //   })
-  //   .catch(function (error) {
-  //     // handle error
-  //     console.log(error);
-  //   }); // END second GET - call
-  // })
-  // .catch(function (error) {
-  //   // handle error
-  //   console.log(error);
-  // })
-  // .finally(function () {
-  //   // always executed
-  // });
-
-
   // let classesToAdd = [ 'foo', 'bar', 'baz' ];
   // div.classList.add(...classesToAdd);
