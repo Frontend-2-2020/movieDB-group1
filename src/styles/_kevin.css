@@ -1010,6 +1010,10 @@ li {
   color: #923026;
 }
 
+.collapse {
+  display: none;
+}
+
 nav {
   height: 100px;
   width: 100vw;

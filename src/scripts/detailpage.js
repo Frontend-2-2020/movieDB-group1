@@ -120,8 +120,9 @@ const fillData = (dataObj) =>{
 
  const fillCast = (dataObj) => {
   const table = document.querySelector('.cast__list');
-
+  let i = 0;
   dataObj.forEach((el) =>{
+    i++;
     console.log(el.name, el.profile_path);
     const tableRow = document.createElement('tr');
     const cell1 = document.createElement('td');
@@ -141,12 +142,23 @@ const fillData = (dataObj) =>{
       cell3.appendChild(actorImg);
       cell3.classList.add('actor__img');
     }
+
+    if(i > 5){
+      //TODO collapse & show function 
+      tableRow.classList.add('collapse');
+    }
     
     tableRow.appendChild(cell1);
     tableRow.appendChild(cell2);
     tableRow.appendChild(cell3);
     table.appendChild(tableRow);
   });
+  
+  //Show 'plus-icon' if part of list is hidden
+  if(i > 5){
+    const showMoreIcon = document.getElementById('expand-list');
+    showMoreIcon.classList.toggle('collapse');
+  }
  };
 
 
