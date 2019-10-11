@@ -129,8 +129,6 @@ const fillData = (dataObj) =>{
     const cell3 = document.createElement('td');
     const actorImg = document.createElement('img');
 
-    
-
     cell1.textContent = el.name;
     cell2.textContent = el.character;
     //Check if there is an image available. If not, set text
@@ -162,10 +160,19 @@ const fillData = (dataObj) =>{
 
  const fillMediaSection = (dataObj) =>{
   const mediaItem = document.querySelector('.media__item');
+  //Create necessary elements
   const mediaImg = document.createElement('img');
+  const linkPoster = document.createElement('a');
+
+  //Set attributes on elements
+  linkPoster.setAttribute('href', `https://image.tmdb.org/t/p/w780${dataObj.poster_path}`);
+  linkPoster.setAttribute('target', '_blank');
   const posterPath = `https://image.tmdb.org/t/p/w342${dataObj.poster_path}`;
   mediaImg.setAttribute('src', posterPath);
-  mediaItem.appendChild(mediaImg);
+
+  //Append elements
+  linkPoster.appendChild(mediaImg);
+  mediaItem.appendChild(linkPoster);
  };
 
   // let classesToAdd = [ 'foo', 'bar', 'baz' ];
