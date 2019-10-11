@@ -1,5 +1,5 @@
 import Axios from 'axios';
-
+import queryString from 'query-string';
 export function initOverview() {
     Axios
         .get(
@@ -9,7 +9,7 @@ export function initOverview() {
         .then(function (response) {
             var resultaat = response.data.results;
             console.log(response);
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 20; i++) {
                 console.log(resultaat[i]); //standaard key in axios is data
                 var film =   `
                 <div class="card h-100 " id="film${i}" data-id="${resultaat[i].id}" data-rank="${[i+1]}">
@@ -57,4 +57,5 @@ export function initOverview() {
             // always executed
         });
 }
+
 
