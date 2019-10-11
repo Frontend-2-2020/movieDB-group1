@@ -11,18 +11,25 @@ export function initDetail(){
     Axios.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=03eb07b472e59db4fab1d72f159a2841`),
 
     //Call videos
-    Axios.get(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=03eb07b472e59db4fab1d72f159a2841`)
+    Axios.get(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=03eb07b472e59db4fab1d72f159a2841`),
+
+    //Call credits / cast
+    Axios.get(`https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=03eb07b472e59db4fab1d72f159a2841`)
   ])
-  .then(Axios.spread((movieResponse, videoResponse) => {
+  .then(Axios.spread((movieResponse, videoResponse, creditsResponse) => {
     const movieDetailsData = movieResponse.data; //Return: specific movie details
     const movieVideos = videoResponse.data.results; //Returns a list with videos
+    const creditsCastData = creditsResponse.data.cast; //Returns details about the cast
 
     fillHero(movieDetailsData, movieVideos);
     fillData(movieDetailsData);
-    setRating(movieDetailsData);
     showProduction(movieDetailsData);
+    setRating(movieDetailsData);
+    fillCast(creditsCastData);
+    fillMediaSection(movieDetailsData);
 
     console.log(movieDetailsData, movieVideos);
+    console.log('credits', creditsCastData);
   }));
 };
 
@@ -79,17 +86,20 @@ const fillData = (dataObj) =>{
     runtimeEl.textContent = `${runtime} min.`;
  };
 
- //CONTINUE HERE ...!!!!!
  const showProduction = (dataObj) =>{
+   //Get production companies object
     const productionList = dataObj.production_companies;
+    //Get ul-tag
     const productionListTag = document.querySelector('.production-comp');
 
+    //Loop over production companies object
     productionList.forEach((el)=>{
       const productionItem = document.createElement('li');
       productionItem.classList.add('p-4');
       
+      //Check if there is a path to a logo
       if(el.logo_path){
-        var productionImgTag = document.createElement('img');
+        const productionImgTag = document.createElement('img');
         //Add IMG-tag to LI
         productionItem.appendChild(productionImgTag);
         const productionLogo = `https://image.tmdb.org/t/p/w45${el.logo_path}`; //Last slash is in the path
@@ -97,15 +107,42 @@ const fillData = (dataObj) =>{
         productionImgTag.setAttribute('src', productionLogo);
         productionImgTag.setAttribute('alt', productionName);
       }else{
+        //Add text to inform user that the logo is 'not found'
         var logoNAEl = document.createElement('p');
-        logoNAEl.textContent = 'logo not found';
+        logoNAEl.classList.add('not-found');
+        logoNAEl.textContent = `Logo not found - ${el.name}`;
         productionItem.appendChild(logoNAEl);
       };
       //Add listitem to the UL
       productionListTag.appendChild(productionItem);
     });
-    
  };
+
+ const fillCast = (dataObj) => {
+  const table = document.querySelector('.cast__list');
+
+  dataObj.forEach((el) =>{
+    console.log(el.name, el.profile_path);
+    const tableRow = document.createElement('tr');
+    const cell1 = document.createElement('td');
+    const cell2 = document.createElement('td');
+    const cell3 = document.createElement('td');
+    const actorImg = document.createElement('img');
+    const actorImgUrl = `https://image.tmdb.org/t/p/w45${el.profile_path}`;
+
+    actorImg.setAttribute('src', actorImgUrl);
+
+    cell1.textContent = el.name;
+    cell2.textContent = el.character;
+    cell3.appendChild(actorImg);
+
+    tableRow.appendChild(cell1);
+    tableRow.appendChild(cell2);
+    tableRow.appendChild(cell3);
+    table.appendChild(tableRow);
+  });
+ };
+
 
  const setRating = (dataObj) =>{
    const scoreVisual = document.querySelector('.score');
@@ -113,6 +150,14 @@ const fillData = (dataObj) =>{
    const vote = dataObj.vote_average * 10;
    scoreVisual.classList.add(`p${vote}`);
    scoreTxt.textContent = `${vote}%`;
+ };
+
+ const fillMediaSection = (dataObj) =>{
+  const mediaItem = document.querySelector('.media__item');
+  const mediaImg = document.createElement('img');
+  const posterPath = `https://image.tmdb.org/t/p/w342${dataObj.poster_path}`;
+  mediaImg.setAttribute('src', posterPath);
+  mediaItem.appendChild(mediaImg);
  };
 
 
@@ -143,3 +188,7 @@ const fillData = (dataObj) =>{
   // .finally(function () {
   //   // always executed
   // });
+
+
+  // let classesToAdd = [ 'foo', 'bar', 'baz' ];
+  // div.classList.add(...classesToAdd);

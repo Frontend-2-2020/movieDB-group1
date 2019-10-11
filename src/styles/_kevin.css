@@ -1057,6 +1057,11 @@ nav img {
   font-weight: 800;
 }
 
+.not-found {
+  color: #f05215;
+  font-size: .6rem;
+}
+
 .row--hero {
   padding-top: 4rem;
 }

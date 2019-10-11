@@ -7,17 +7,17 @@ import { initOverview } from './overview.js';
 import { initDetail } from './detailpage.js';
 
 const parsed = queryString.parse(location.search);
-console.log(parsed);
+console.log('parsed', parsed);
 
 // Get URL to decide wich script to execute
           //TODO uncomment hideShow() when all is ready!!!!
 if(parsed.movie){
   initDetail();
-  //hideShow('intropage');
+  hideShow('intropage');
   console.log('details');
 }else{
   initOverview();
-  //hideShow('detailpage');
+  hideShow('detailpage');
   console.log('home');
 }
 
