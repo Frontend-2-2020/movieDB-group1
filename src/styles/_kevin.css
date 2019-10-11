@@ -1062,6 +1062,18 @@ nav img {
   font-size: .6rem;
 }
 
+tr:hover {
+  background-color: #eee;
+}
+
+tr:hover .actor__img img {
+  zoom: .6;
+}
+
+.actor__img img {
+  zoom: .4;
+}
+
 .row--hero {
   padding-top: 4rem;
 }

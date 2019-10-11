@@ -68,6 +68,20 @@ nav{
   font-size: .6rem;
 }
 
+tr:hover{
+  background-color: #eee;
+
+  .actor__img img{
+    zoom: .6;
+  }
+}
+
+//Make img a little bigger
+//Res. isn't that good then
+.actor__img img{
+  zoom: .4;
+}
+
 .row--hero{
   padding-top: 4rem;
 }
