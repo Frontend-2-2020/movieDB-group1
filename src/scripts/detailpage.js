@@ -128,15 +128,22 @@ const fillData = (dataObj) =>{
     const cell2 = document.createElement('td');
     const cell3 = document.createElement('td');
     const actorImg = document.createElement('img');
-    const actorImgUrl = `https://image.tmdb.org/t/p/w185${el.profile_path}`;
 
-    actorImg.setAttribute('src', actorImgUrl);
+    
 
     cell1.textContent = el.name;
     cell2.textContent = el.character;
-    cell3.appendChild(actorImg);
-    cell3.classList.add('actor__img');
-
+    //Check if there is an image available. If not, set text
+    if(!el.profile_path){
+      cell3.textContent = 'no img available';
+      cell3.classList.add('not-found');
+    }else{
+      const actorImgUrl = `https://image.tmdb.org/t/p/w185${el.profile_path}`;
+      actorImg.setAttribute('src', actorImgUrl);
+      cell3.appendChild(actorImg);
+      cell3.classList.add('actor__img');
+    }
+    
     tableRow.appendChild(cell1);
     tableRow.appendChild(cell2);
     tableRow.appendChild(cell3);
