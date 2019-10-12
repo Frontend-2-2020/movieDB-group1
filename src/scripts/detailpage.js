@@ -144,7 +144,6 @@ const fillData = (dataObj) =>{
     }
 
     if(i > 5){
-      //TODO collapse & show function 
       tableRow.classList.add('collapse');
     }
     
@@ -155,6 +154,7 @@ const fillData = (dataObj) =>{
   });
   
   //Show 'plus-icon' if part of list is hidden
+  //TODO make icon work
   if(i > 5){
     const showMoreIcon = document.getElementById('expand-list');
     showMoreIcon.classList.toggle('collapse');

@@ -11,10 +11,6 @@ li{
   color: #923026;
 }
 
-.collapse{
-  display: none;
-}
-
 // NAV om deze te simuleren indien Roger reeds een maakte
 nav{
   height: 100px;
@@ -84,6 +80,15 @@ tr:hover{
 //Res. isn't that good then
 .actor__img img{
   zoom: .4;
+}
+
+#expand-list{
+  display: block;
+  width: fit-content;
+  background-color: #ccc;
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  margin: 1rem auto;
 }
 
 .row--hero{

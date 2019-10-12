@@ -1010,10 +1010,6 @@ li {
   color: #923026;
 }
 
-.collapse {
-  display: none;
-}
-
 nav {
   height: 100px;
   width: 100vw;
@@ -1076,6 +1072,15 @@ tr:hover .actor__img img {
 
 .actor__img img {
   zoom: .4;
+}
+
+#expand-list {
+  display: block;
+  width: fit-content;
+  background-color: #ccc;
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  margin: 1rem auto;
 }
 
 .row--hero {
