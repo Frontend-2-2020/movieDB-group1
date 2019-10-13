@@ -1,117 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Opdracht GROEP 1</title>
-    </head>
-    <body>
-           
-        <div id="intropage">
-        <!-- Jumbotron - volledige pagina -->
-        <div class=" jumbotron-intro carousel breedte vertical-center text-center"></div >
-        <div class="main-block">
-            <div class="container-fluid">
-                <!-- Content Row -->
-                <div class="row justify-content-flex-start" id="overview"></div>
-            </div>
-            <!-- /.container -->
-        </div>
-        </div>
-    <!-- END intropage -->
 
-    <!-- BEGIN detailpage -->
-    <div id="detailpage">
-        <nav>
-            <!-- LOGO TMDB -->
-            <img
-                src="https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg"
-                alt="">
-        </nav>
-        <div class="jumbotron jumbotron--bg">
-          <aside class="ranking-box"><p class="ranking__text"><sup>#</sup> <span class="ranking__num">1
-          </span></p></aside>
-          <div class="container">
-                <!-- start Bootstrap "grid"-->
-                <div class="row row--hero">
-                    <div class="col col-lg-7 align-self-end">
-                        <h2 id="tagline">lorem tag</h2>
-                        <h1 class="display-4" id="movie-title">lorem Title</h1>
-                        <p id="intro">
-                            lorem intro
-                            <br>
-                            <span class="readmore">read more...</span>
-                        </p>
-                    </div>
-                    <!-- END col -->
-                    <div class="col-lg-5">
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe
-                                class="embed-responsive-item jumbotron__trailer"
-                                src="#"
-                                id="trailer"></iframe>
-                        </div>
-                    </div>
-                    <!-- END col -->
-                </div>
-                <!-- END row / row--hero -->
-            </div>
-            <!-- END container for "grid"-->
-        </div>
-        <!-- END jumbotron -->
-        <div class="container text-center">
-            <!-- start Bootstrap "grid"-->
-            <div class="row">
-                <div class="col col-lg-6 movie-details">
-                    <div class="details__content">
-                        <h3>Data</h3>
-                        <p class="details__release">Release:
-                            <small class="text-muted" id="release">releasedate</small>
-                        </p>
-                        <p class="details__time">Runtime:
-                            <small class="text-muted" id="runtime">runtime</small>
-                        </p>
-                        <div class="details__cast">
-                            <h4>Cast</h4>
-                            <table>
-                                <!-- Hier komt de cast / personages -->
-                                <tbody class="cast__list">
-                                  <tr>
-                                    <th class="cast__actor">Actor / actress</th>
-                                    <th class="cast__char">Character</th>
-                                    <th class="cast__pic">Picture</th>
-                                  </tr>
-                                </tbody>
-                            </table>
-                            <span id="expand-list" class="collapse">+</span>
-                        </div>
-                        <h4>Production companies</h4>
-                        <ul class="production-comp d-flex flex-row flex-wrap align-items-center"></ul>
-                        <!-- Hier komen de namen + logo's adhv API -->
-                        <h4>Ratings</h4>
-                        <!-- Hier komen de rating adhv API -->
-                        <div class="wrapper d-flex">
-                          <div class="score c100 green m-auto">
-                              <span class="score-txt">#</span>
-                              <div class="slice">
-                                  <div class="bar"></div>
-                                  <div class="fill"></div>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END col -->
-                <div class="col col-lg-6 movie-media">
-                    <h3>Media</h3>
-                    <div class="container media__container">
-                        <!-- start Bootstrap "grid" voor foto's / filmpjes-->
-                        <div class="media__item"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opdracht GROEP 1</title>
+
+  <!-- Fontawesome link -->
+  <script src="https://kit.fontawesome.com/68f247f2fb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="intropage">
+    <!-- Jumbotron - volledige pagina -->
+    <div class=" jumbotron-intro carousel breedte vertical-center text-center"></div>
+    <div class="main-block">
+      <div class="container-fluid">
+        <!-- Content Row -->
+        <div class="row justify-content-flex-start" id="overview"></div>
+      </div>
+      <!-- /.container -->
     </div>
-    <!-- End of detailpage DIV-->
+  </div>
+  <!-- END intropage -->
+
+  <!-- BEGIN detailpage -->
+  <div id="detailpage">
+    <!-- Close button -->
+    <div class="close-page-btn"><i class="far fa-window-close"></i></div>
+    <nav>
+      <!-- LOGO TMDB -->
+      <img
+        src="https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg"
+        alt="">
+    </nav>
+    <div class="jumbotron jumbotron--bg">
+      <aside class="ranking-box">
+        <p class="ranking__text"><sup>#</sup> <span class="ranking__num">1
+          </span></p>
+      </aside>
+      <div class="container">
+        <!-- start Bootstrap "grid"-->
+        <div class="row row--hero">
+          <div class="col col-lg-7 align-self-end">
+            <h2 id="tagline">lorem tag</h2>
+            <h1 class="display-4" id="movie-title">lorem Title</h1>
+            <p id="intro">
+              lorem intro
+              <br>
+              <span class="readmore">read more...</span>
+            </p>
+          </div>
+          <!-- END col -->
+          <div class="col-lg-5">
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item jumbotron__trailer" src="#" id="trailer"></iframe>
+            </div>
+          </div>
+          <!-- END col -->
+        </div>
+        <!-- END row / row--hero -->
+      </div>
+      <!-- END container for "grid"-->
+    </div>
+    <!-- END jumbotron -->
+    <div class="container text-center">
+      <!-- start Bootstrap "grid"-->
+      <div class="row">
+        <div class="col col-lg-6 movie-details">
+          <div class="details__content">
+            <section class="data-section">
+              <h3>Data</h3>
+              <p class="details__release">Release:
+                <small class="text-muted" id="release">releasedate</small>
+              </p>
+              <p class="details__time">Runtime:
+                <small class="text-muted" id="runtime">runtime</small>
+              </p>
+            </section>
+            <hr>
+            <section class="details__cast">
+              <h4>Cast</h4>
+              <table>
+                <!-- Hier komt de cast / personages -->
+                <tbody class="cast__list">
+                  <tr id="headings">
+                    <th class="cast__actor">Actor / actress</th>
+                    <th class="cast__char">Character</th>
+                    <th class="cast__pic">Picture</th>
+                  </tr>
+                </tbody>
+              </table>
+              <span id="expand-list" class="collapse">+</span>
+            </section>
+            <hr>
+            <section class="production-section">
+              <h4>Production companies</h4>
+              <ul class="production-comp d-flex flex-row flex-wrap align-items-center"></ul>
+              <!-- Hier komen de namen + logo's adhv API -->
+            </section>
+            <hr>
+            <section class="rating-section">
+              <h4>Ratings</h4>
+              <!-- Hier komen de rating adhv API -->
+              <div class="wrapper d-flex">
+                <div class="score c100 green m-auto">
+                  <span class="score-txt">#</span>
+                  <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                  </div>
+                </div>
+              </div>
+            </section> <!-- END ratings -->
+          </div>
+        </div>
+        <!-- END col -->
+        <div class="col col-lg-6 movie-media">
+          <h3>Media</h3>
+          <div class="container media__container">
+            <!-- start Bootstrap "grid" voor foto's / filmpjes-->
+            <div class="media__item"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of detailpage DIV-->
 </body>
 </html>

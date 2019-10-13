@@ -1,8 +1,7 @@
-
 @import "_colors";
 @import "_circles";
 
-li{
+li {
   list-style: none;
 }
 
@@ -11,8 +10,23 @@ li{
   color: #923026;
 }
 
+.close-page-btn {
+  cursor: pointer;
+  position: fixed;
+  right: 50px;
+  top: 20px;
+  color: $swatch-7;
+  font-size: 2rem;
+  z-index: 99999;
+}
+
+.not-found {
+  color: $swatch_4;
+  font-size: .6rem;
+}
+
 // NAV om deze te simuleren indien Roger reeds een maakte
-nav{
+nav {
   height: 100px;
   width: 100vw;
   background: $swatch_6;
@@ -20,77 +34,89 @@ nav{
   display: flex;
 
   //Logo tmDB
-  img{
+  img {
     margin: auto;
     height: 80px;
   }
 }
 
+.row--hero {
+  padding-top: 4rem;
+}
+
 //Hero
-.jumbotron{
+.jumbotron {
   background: url('https://image.tmdb.org/t/p/w1280/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg') no-repeat center center / cover;
   position: relative;
   color: white;
   min-height: 70vh;
 
-  &::before{
+  &::before {
     content: " ";
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(0,0,0);
-    
+    background: rgb(0, 0, 0);
+
     top: 0;
     left: 0;
     opacity: .5;
   }
 
-  *{
+  * {
     color: inherit;
-  }
-
-}
-
-.ranking-box{
-  position: absolute;
-  top: 0;
-
-  .ranking__text{
-    padding: 2rem;
-    font-size: 3rem;
-    background: rgba(0,0,0,.6);
-    font-weight: 800;
-  }
-}
-
-.not-found{
-  color: $swatch_4;
-  font-size: .6rem;
-}
-
-tr:hover{
-  background-color: #eee;
-
-  .actor__img img{
-    zoom: .6;
   }
 }
 
 //Make img a little bigger
 //Res. isn't that good then
-.actor__img img{
+.actor__img img {
   zoom: .4;
 }
 
-#expand-list{
+tr:hover {
+  background-color: #eee;
+
+  .actor__img img {
+    zoom: .6;
+  }
+}
+
+tr#headings:hover {
+  background-color: #fff;
+}
+
+
+
+#expand-list {
   display: block;
   width: fit-content;
   background-color: #ccc;
   padding: 1rem 1.5rem;
   border-radius: 50%;
   margin: 1rem auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.row--hero{
-  padding-top: 4rem;
+#expand-list.change-to-close {
+  transform: rotate(45deg);
+  background-color: $swatch_4;
+  color: #fff;
+  position: relative;
+  font-weight: bold;
+}
+
+.ranking-box {
+  position: absolute;
+  top: 0;
+
+  .ranking__text {
+    padding: 2rem;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, .6);
+    font-weight: 800;
+  }
 }

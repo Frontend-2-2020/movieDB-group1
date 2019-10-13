@@ -10,7 +10,6 @@ const parsed = queryString.parse(location.search);
 console.log('parsed', parsed);
 
 // Get URL to decide wich script to execute
-          //TODO uncomment hideShow() when all is ready!!!!
 if(parsed.movie){
   initDetail();
   hideShow('intropage');
@@ -21,8 +20,6 @@ if(parsed.movie){
   console.log('home');
 }
 
-// SIDENOTE :: this function in this file, in detail.js & overview.js or seperate .js and import?
-// Hide one div if the other is visible (toggle)
 function hideShow(id) {
   var el = document.getElementById(id);
   if (el.style.display === "none") {
